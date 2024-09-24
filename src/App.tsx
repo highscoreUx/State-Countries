@@ -35,15 +35,26 @@ const App: React.FC = () => {
 					</div>
 					<hr />
 					<div>
-						<h1>{data && data[0]?.name?.official}</h1>
+						<h1>
+							{
+								//@ts-ignore
+								data && data[0]?.name?.official
+							}
+						</h1>
 
 						{data &&
+							//@ts-ignore
 							data[0]?.continents?.map((continent, indexs) => {
 								return <p key={indexs}>{continent}</p>;
 							})}
 						<div className="wrap">
 							<p>👬</p>
-							<p>{data && data[0]?.population.toLocaleString()}</p>
+							<p>
+								{
+									//@ts-ignore
+									data && data[0]?.population.toLocaleString()
+								}
+							</p>
 						</div>
 						<div className="wrap">
 							<p>🗣️</p>
@@ -68,32 +79,66 @@ const App: React.FC = () => {
 					<div>
 						<div className="wrap">
 							<p>🏛️</p>
-							<p>{data && data[0]?.capital[0]}</p>
+							<p>
+								{
+									//@ts-ignore
+									data && data[0]?.capital[0]
+								}
+							</p>
 						</div>
 						<div className="wrap">
 							<p>🏄</p>
 							<p>
-								{data && data[0]?.latlng[0]}.00 Latitude,{" "}
-								{data && data[0]?.latlng[1]}.00 Longitude
+								{
+									//@ts-ignore
+									data && data[0]?.latlng[0]
+								}
+								.00 Latitude,{" "}
+								{
+									//@ts-ignore
+									data && data[0]?.latlng[1]
+								}
+								.00 Longitude
 							</p>
 						</div>
 						<div className="wrap">
 							<p>🌞</p>
-							<p>{data && data[0]?.startOfWeek}</p>
+							<p>
+								{
+									//@ts-ignore
+									data && data[0]?.startOfWeek
+								}
+							</p>
 						</div>
 						<div className="wrap">
 							<p>⏱️</p>
-							<p>{data && data[0]?.timezones[0]}</p>
+							<p>
+								{
+									//@ts-ignore
+									data && data[0]?.timezones[0]
+								}
+							</p>
 						</div>
 						<div className="wrap">
 							<p>😁</p>
-							<p>{data && data[0]?.region}</p>
+							<p>
+								{
+									//@ts-ignore
+									data && data[0]?.region
+								}
+							</p>
 						</div>
 						<div className="wrap">
 							<p>✔️</p>
 							<p>
 								<span>
-									<a href={data && data[0]?.maps.googleMaps} target="_blank">
+									<a
+										href={
+											//@ts-ignore
+											data && data[0]?.maps.googleMaps
+										}
+										target="_blank"
+									>
 										Map Link
 									</a>
 								</span>
