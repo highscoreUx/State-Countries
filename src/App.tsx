@@ -8,7 +8,6 @@ const App: React.FC = () => {
 
 	const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
-		setCountry(countryName);
 		setisLoading(true);
 		try {
 			const response = await fetch(
@@ -27,7 +26,6 @@ const App: React.FC = () => {
 		return <h1>Loading</h1>;
 	}
 
-	console.log(data);
 	//todo: take note of capitalization
 	return (
 		<div className="flex">
@@ -169,6 +167,7 @@ const App: React.FC = () => {
 						value={countryName}
 						onChange={(e) => {
 							setCountryName(e.currentTarget.value);
+							setCountry(e.currentTarget.value);
 						}}
 					/>
 					<button type="submit" disabled={isLoading}>
