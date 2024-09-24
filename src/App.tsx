@@ -63,9 +63,12 @@ const App: React.FC = () => {
 						<div className="wrap">
 							<p>💶</p>
 							<p>
-								{data.length > 0 && Object.keys(data[0]?.currencies)}
-								{/* {data && Object.keys(data[0]?.currencies)},{" "} */}
-								{/* {data && data[0].currencies.currencyKey.symbol} */}
+								{data.length > 0 && Object.keys(data[0]?.currencies)},{" "}
+								{data.length &&
+									(() => {
+										const key = Object.keys(data[0]?.currencies)[0];
+										return data[0].currencies[key].symbol;
+									})()}
 							</p>
 						</div>
 					</div>
