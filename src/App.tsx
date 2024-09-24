@@ -38,12 +38,12 @@ const App: React.FC = () => {
 						<h1>{data && data[0]?.name?.official}</h1>
 
 						{data &&
-							data[0]?.continents?.map((continent) => {
-								return <p>{continent}</p>;
+							data[0]?.continents?.map((continent, indexs) => {
+								return <p key={indexs}>{continent}</p>;
 							})}
 						<div className="wrap">
 							<p>👬</p>
-							<p>{data && data[0]?.population}</p>
+							<p>{data && data[0]?.population.toLocaleString()}</p>
 						</div>
 						<div className="wrap">
 							<p>🗣️</p>

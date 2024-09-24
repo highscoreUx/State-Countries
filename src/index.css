@@ -47,3 +47,24 @@ img {
 	padding: 24px;
 	border-radius: 16px;
 }
+
+button {
+	background-color: blue;
+	color: white;
+	border: none;
+	border-radius: 8px;
+	transition: all;
+	transition-duration: 300ms;
+	transition-timing-function: ease-in-out;
+}
+
+button:hover {
+	scale: 1.05;
+	opacity: 0.7;
+}
+
+@media screen and (max-width: 800px) {
+	.flip {
+		flex-direction: column;
+	}
+}
