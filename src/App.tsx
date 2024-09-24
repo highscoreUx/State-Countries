@@ -48,7 +48,9 @@ const App: React.FC = () => {
 							})}
 						<div className="wrap">
 							<p>👬</p>
-							<p>{data && data[0]?.population.toLocaleString()}</p>
+							<p>
+								{data && (data[0]?.population / 1_000_000).toFixed(2)}m People
+							</p>
 						</div>
 						<div className="wrap">
 							<p>🗣️</p>
