@@ -33,7 +33,7 @@ const useFecth = (name: string) => {
 
 		getData();
 	}, []);
-	return { isLoading, data };
+	return { isLoading, data, setData, setisLoading };
 };
 
 export default useFecth;

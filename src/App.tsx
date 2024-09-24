@@ -4,11 +4,23 @@ import useFecth from "./hooks";
 const App: React.FC = () => {
 	const [countryName, setCountryName] = useState("");
 	const [country, setCountry] = useState("USA");
-	const { data, isLoading } = useFecth(country);
+	const { data, isLoading, setData, setisLoading } = useFecth(country);
 
-	const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+	const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 		setCountry(countryName);
+		setisLoading(true);
+		try {
+			const response = await fetch(
+				`https://restcountries.com/v3.1/name/${country}`
+			);
+			const data = await response.json();
+			setData(data);
+		} catch (error: any) {
+			console.log(error);
+		} finally {
+			setisLoading(false);
+		}
 	};
 
 	if (isLoading) {
@@ -159,7 +171,9 @@ const App: React.FC = () => {
 							setCountryName(e.currentTarget.value);
 						}}
 					/>
-					<button type="submit">GetDetails</button>
+					<button type="submit" disabled={isLoading}>
+						{isLoading ? "Getting Details" : "Get Details"}
+					</button>
 				</form>
 			</div>
 		</div>
