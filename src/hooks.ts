@@ -1,8 +1,36 @@
 import { useEffect, useState } from "react";
 
 interface IData {
-	data: any;
-	setData: React.Dispatch<React.SetStateAction<any>>;
+	flags: {
+		alt: string;
+		png: string;
+		svg: string;
+	};
+	name: {
+		official: string;
+	};
+	continents: string[];
+	population: number;
+	coatOfArms: {
+		png: string;
+	};
+	capital: string[];
+	latlng: number[];
+	startOfWeek: string;
+	timezones: string[];
+	region: string;
+	maps: {
+		googleMaps: string;
+	};
+	currencies: {
+		[key: string]: {
+			name: string;
+			symbol: string;
+		};
+	};
+	languages: {
+		[key: string]: string;
+	};
 }
 
 /**
@@ -12,7 +40,7 @@ interface IData {
  */
 const useFecth = (name: string) => {
 	const [isLoading, setisLoading] = useState<boolean>(false);
-	const [data, setData] = useState<IData>();
+	const [data, setData] = useState<IData[] | []>([]);
 
 	useEffect(() => {
 		const getData = async () => {

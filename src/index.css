@@ -30,6 +30,7 @@ img {
 
 .wrap {
 	display: flex;
+	gap: 8px;
 }
 
 .flip {
